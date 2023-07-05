@@ -17,6 +17,6 @@ db: List[Order] [
 def read_root():
     return {"Hello": "World"}
 
-@app.get('/api/v1/orers')
+@app.get('/api/v1/orders')
 def order_list():
-    return 
+    return db;

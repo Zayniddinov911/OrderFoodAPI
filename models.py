@@ -9,6 +9,12 @@ class Food(str, Enum):
     Sandwiches = "Sandwiches"
     Plov = "Plov"
 
+class PriceFood(int, Enum):
+    Pizza = 45
+    Burger = 23
+    Sandwiches = 28
+    Plov = 50
+
 
 class User(str, BaseModel):
     id: Optional[UUID] = uuid4
@@ -19,7 +25,10 @@ class User(str, BaseModel):
 class Order(int, str, BaseModel):
     id: Optional[UUID] = uuid4
     food: Optional[Food]
+    food_price: Optional[PriceFood]
     user: List[User]
+
+
 
 
 
